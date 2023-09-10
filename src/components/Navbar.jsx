@@ -3,7 +3,6 @@ import {
   Flex,
   Avatar,
   HStack,
-  Text,
   IconButton,
   Button,
   Menu,
@@ -15,7 +14,7 @@ import {
   useColorModeValue,
   Stack,
 } from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
+import { HamburgerIcon, CloseIcon, EmailIcon } from '@chakra-ui/icons';
 
 const Links = ['Dashboard', 'Projects', 'Team'];
 
@@ -70,9 +69,9 @@ export default function Navbar() {
               colorScheme={'teal'}
               size={'sm'}
               mr={4}
-              leftIcon={<AddIcon />}
+              leftIcon={<EmailIcon />}
             >
-              Action
+              Login
             </Button>
             <Menu>
               <MenuButton

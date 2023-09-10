@@ -8,10 +8,10 @@ export default function HomeLayout() {
       <header className="fixed top-0 left-0 right-0 shadow-sm">
         <Navbar />
       </header>
-      <main className="pt-20 sm:mx-6 md:mx-16">
+      <main className="pt-20 mx-4 sm:mx-6 md:mx-16">
         <Outlet />
       </main>
-      <footer className="sm:mx-6 md:mx-16">
+      <footer className="mx-4 sm:mx-6 md:mx-16 mt-4">
         <Footer />
       </footer>
     </>
