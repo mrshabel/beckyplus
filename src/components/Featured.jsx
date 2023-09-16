@@ -4,6 +4,7 @@ import image2 from '../images/featured2.jpg';
 import image3 from '../images/featured3.jpg';
 import image4 from '../images/featured4.jpg';
 import { Link } from 'react-router-dom';
+import { Image } from '@chakra-ui/react';
 
 const data = [
   {
@@ -36,19 +37,25 @@ export default function Featured() {
 
       <main className="mt-5 grid gap-5 place-items-center grid-cols-2 md:grid-cols-4">
         {data.map((product, index) => (
-          <ProductCard
-            key={index}
-            image={product.image}
-            title={product.title}
-            price={product.price}
+          // <ProductCard
+          //   key={index}
+          //   image={product.image}
+          //   title={product.title}
+          //   price={product.price}
+          // />
+          <Image
             height="350px"
+            width="500px"
+            objectFit="center"
+            src={product.image}
+            alt={product.title}
           />
         ))}
       </main>
       <footer className="mt-6 flex justify-center">
         <Link
           className="h-12 px-6 capitalize font-serif font-normal tracking-wide py-2 bg-transparent border border-gray-700 flex items-center justify-center "
-          to="/"
+          to="/shop"
         >
           & more new
         </Link>

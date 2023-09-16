@@ -1,15 +1,8 @@
 import {
   Box,
   Flex,
-  Avatar,
   HStack,
   IconButton,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
   Link as ChakraLink,
@@ -17,6 +10,7 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
+import NavbarDrawer from './NavbarDrawer';
 import { HamburgerIcon, CloseIcon, EmailIcon } from '@chakra-ui/icons';
 import CartMenu from './CartMenu';
 import Search from './Search';
@@ -27,7 +21,7 @@ const Links = [
 ];
 
 const NavLink = props => {
-  const { link, title } = props;
+  const { link, title, onClose } = props;
   return (
     <ChakraLink
       as={ReactRouterLink}
@@ -42,6 +36,7 @@ const NavLink = props => {
       _activeLink={{
         bg: useColorModeValue('gray.200', 'gray.700'),
       }}
+      onClick={onClose}
       to={link}
     >
       {title}
@@ -94,13 +89,13 @@ export default function Navbar() {
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
-              {Links.map((link, index) => (
-                <NavLink key={index} link={link.link} title={link.title} />
-              ))}
-            </Stack>
-          </Box>
+          <NavbarDrawer
+            onOpen={onOpen}
+            isOpen={isOpen}
+            onClose={onClose}
+            Links={Links}
+            NavLink={NavLink}
+          />
         ) : null}
       </Box>
     </>
