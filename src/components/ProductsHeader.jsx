@@ -7,7 +7,7 @@ export default function ProductsHeader() {
 
   console.log(view, sortBy);
   return (
-    <section className="flex justify-between">
+    <section className="flex justify-between items-center ">
       <h2 className="">300 Products</h2>
 
       <div className="flex gap-6">

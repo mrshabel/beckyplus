@@ -44,6 +44,7 @@ export default function Featured() {
           //   price={product.price}
           // />
           <Image
+            key={index}
             height="350px"
             width="500px"
             objectFit="center"
