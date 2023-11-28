@@ -19,9 +19,7 @@ export default function Search() {
           className=""
           rightIcon={<IoIosSearch />}
           onClick={onOpen}
-        >
-          Search
-        </Button>
+        />
       </Box>
       <SearchModal onOpen={onOpen} onClose={onClose} isOpen={isOpen} />
     </>

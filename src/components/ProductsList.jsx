@@ -10,9 +10,9 @@ export default function ProductList() {
         <Box
           key={index}
           as={motion.div}
-          initial={{ opacity: 0, filter: 'blur(20px)' }}
-          whileInView={{ opacity: 1, filter: 'blur(0)' }}
-          transition="0.3s linear"
+          initial={{ opacity: 0, filter: 'blur(2px)' }}
+          animate={{ opacity: 1, filter: 'blur(0)' }}
+          transition="0.2s linear"
         >
           <ProductCard
             image={product.image}

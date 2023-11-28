@@ -26,34 +26,33 @@ export default function ProductDetail() {
     return dispatch({ type: 'cart/add', payload: product });
   }
   return (
-    <main className="w-full flex justify-center my-4">
-      <section className="w-full md:w-[85%] lg:w-[60%] flex flex-col items-center sm:flex-row sm:justify-center sm:items-start sm:h-[70vh] gap-x-10 gap-y-4 ">
+    <main className="w-full flex justify-center my-4 mb-[10vh]">
+      <section className="w-full md:w-[85%] lg:w-[60%] flex flex-col items-center sm:flex-row sm:justify-center sm:items-center h-full gap-x-10 gap-y-4 ">
         <Box
-          className="w-full h-[90%]"
+          className="w-full h-full"
           as={motion.div}
-          initial={{ opacity: 0, x: '-50%', filter: 'blur(10px)' }}
-          whileInView={{ opacity: 1, x: '0%', filter: 'blur(0)' }}
+          initial={{ opacity: 0.4, y: '-20%', filter: 'blur(5px)' }}
+          animate={{ opacity: 1, y: '0%', filter: 'blur(0)' }}
           transition="0.2s linear"
         >
           <Image
-            className="w-full "
+            className="w-full"
             rounded={'md'}
             src={product.image}
             alt={product.name}
             // width={'100%'}
             height={useBreakpointValue({
               base: '60vh',
-              sm: '50vh',
-              md: '100%',
+              sm: '100%',
             })}
-            objectFit="cover"
+            objectFit="contain"
           />
         </Box>
         <Box
-          className="w-full h-full flex flex-col gap-2 md:gap-6 "
+          className="w-full h-full flex flex-col gap-2 "
           as={motion.div}
-          initial={{ opacity: 0, x: '50%' }}
-          whileInView={{ opacity: 1, x: '0%' }}
+          initial={{ opacity: 0.4, y: '10%' }}
+          whileInView={{ opacity: 1, y: '0%' }}
           transition="0.2s linear"
         >
           <div className=" font-semibold flex flex-col gap-3 ">

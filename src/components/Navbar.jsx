@@ -31,7 +31,7 @@ const NavLink = props => {
       className="tracking-tight "
       _hover={{
         textDecoration: 'none',
-        bg: useColorModeValue('gray.200', 'gray.700'),
+        bg: 'gray.100',
       }}
       _activeLink={{
         bg: useColorModeValue('gray.200', 'gray.700'),
@@ -49,7 +49,7 @@ export default function Navbar() {
 
   return (
     <>
-      <Box bg={useColorModeValue('white', 'gray.900')} px={4}>
+      <Box px={4} className="backdrop-blur-sm">
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -70,7 +70,18 @@ export default function Navbar() {
             </HStack>
           </HStack>
           <Flex alignItems={'center'}>
-            <Box className="text-gray-800 font-semibold text-2xl">Becky+</Box>
+            <Box className="">
+              <ChakraLink
+                as={ReactRouterLink}
+                className="text-gray-700 font-semibold text-2xl"
+                _hover={{
+                  textDecoration: 'none',
+                }}
+                to="/"
+              >
+                Becky+
+              </ChakraLink>
+            </Box>
           </Flex>
 
           <Flex alignItems={'center'}>

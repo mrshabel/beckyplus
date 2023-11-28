@@ -15,7 +15,6 @@ export default function Menu({ title, items, setMenu }) {
       <MenuList>
         {items.map((item, index) => (
           <MenuItem
-            // value={item}
             key={index}
             onClick={() => {
               setMenu(item);

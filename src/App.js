@@ -1,27 +1,19 @@
 import React from 'react';
 import './index.css';
 import { ChakraProvider, theme } from '@chakra-ui/react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import HomeLayout from './components/HomeLayout';
-import Home from './pages/Home';
-import Shop from './pages/Shop';
-import Product from './pages/Product';
+import { BrowserRouter } from 'react-router-dom';
 import CartContextProvider from './context/CartContext';
+import ScrollTop from './components/ScrollTop';
+import AnimatedRoutes from './components/AnimatedRoutes';
 
 function App() {
   return (
     <BrowserRouter>
+      {/* <ScrollTop /> */}
+
       <ChakraProvider theme={theme}>
         <CartContextProvider>
-          <Routes>
-            <Route path="/" element={<HomeLayout />}>
-              <Route index element={<Home />} />
-              <Route path="shop" element={<Shop />} />
-              <Route path="shop/:slug" element={<Product />} />
-
-              <Route path="*" element={<p>404 page</p>} />
-            </Route>
-          </Routes>
+          <AnimatedRoutes />
         </CartContextProvider>
       </ChakraProvider>
     </BrowserRouter>

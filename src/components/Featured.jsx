@@ -37,12 +37,6 @@ export default function Featured() {
 
       <main className="mt-5 grid gap-5 place-items-center grid-cols-2 md:grid-cols-4">
         {data.map((product, index) => (
-          // <ProductCard
-          //   key={index}
-          //   image={product.image}
-          //   title={product.title}
-          //   price={product.price}
-          // />
           <Image
             key={index}
             height="350px"
